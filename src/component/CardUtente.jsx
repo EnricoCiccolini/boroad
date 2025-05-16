@@ -1,17 +1,31 @@
+import React, { useState } from "react";
+
 export default function CardUtente({ utente }) {
+    const { id, nome, cognome, email, telefono, codiceFiscale } = utente;
+    const [isOpen, setIsOpen] = useState(false);
 
-    const { id, nome, cognome, telefono } = utente;
+    const toggleAccordion = () => {
+        setIsOpen(!isOpen);
+    };
 
-    return <div>
-        <div className="card mb-3" key={id}>
-            <div className="card-body">
-                <h5 className="card-title">{nome}</h5>
-                <h5 className="card-title">{cognome}</h5>
-                <p className="card-text">
-                    {telefono}
-                </p>
+    return (
+        <div key={id}>
+            <div onClick={toggleAccordion}>
+                <div className="card-body bg-secondary-subtle">
+                    <h3 className="card-title text-center mt-2 mb-2 fw-bold">{nome} {cognome}</h3>
+
+
+                    {isOpen && (
+                        <>
+                            <p>Email: {email}</p>
+                            <p>Telefono: {telefono}</p>
+                            <p>Codice Fiscale: {codiceFiscale}</p>
+                        </>
+                    )}
+                </div>
             </div>
         </div>
-    </div>
+    );
 };
+
 
