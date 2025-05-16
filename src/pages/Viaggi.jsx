@@ -2,9 +2,9 @@ import CardViaggio from "../component/CardViaggio";
 import viaggi from '../../data/viaggi';
 import { useState } from "react";
 
-function Viaggi() {
+function Viaggi({ viaggio, setViaggio }) {
 
-    const [viaggio, setViaggio] = useState(viaggi);
+
     const [nuovoViaggio, setNuovoViaggio] = useState({
         destinazione: "",
         dataInizio: "",
@@ -31,7 +31,7 @@ function Viaggi() {
             ...nuovoViaggio
         };
 
-        setViaggio([...viaggi, viaggioAggiunto]);
+        setViaggio([...viaggio, viaggioAggiunto]);
         setNuovoViaggio({ destinazione: "", dataInizio: "", dataFine: "", image: "" })
     };
 

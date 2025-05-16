@@ -4,9 +4,11 @@ import Viaggi from "./pages/Viaggi"
 import Utenti from "./pages/Utenti"
 import DefaultLayout from "./layout/DefaultLayout"
 import DettagliViaggio from "./pages/DettagliViaggio"
-
+import { useState } from "react"
+import viaggi from "../data/viaggi"
 function App() {
 
+  const [viaggio, setViaggio] = useState(viaggi);
   return (
     <>
       <BrowserRouter>
@@ -17,7 +19,7 @@ function App() {
           <Route element={<DefaultLayout />} >
 
             <Route path="/" element={<Homepage />} />
-            <Route path="/viaggi" element={<Viaggi />} />
+            <Route path="/viaggi" element={<Viaggi viaggio={viaggio} setViaggio={setViaggio} />} />
             <Route path="/viaggi/:slug" element={<DettagliViaggio />} />
             <Route path="/utenti" element={<Utenti />} />
 
