@@ -28,7 +28,7 @@ export default function CardViaggio({ viaggio }) {
                 <p className="card-text">Data inizio: {dataInizio}</p>
                 <p className="card-text">Data fine: {dataFine}</p>
                 <p className="card-text fw-bold">Stato: {statoViaggio}</p>
-                <Link to={`/viaggi/${slug}`}><strong>Dettagli del viaggio</strong></Link>
+                <Link className="text-style-none" to={`/viaggi/${slug}`}><strong>Dettagli dei partecipanti</strong></Link>
             </div>
         </div>
     )

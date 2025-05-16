@@ -2,26 +2,44 @@ import React, { useState } from "react";
 
 export default function CardUtente({ utente }) {
     const { id, nome, cognome, email, telefono, codiceFiscale } = utente;
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleAccordion = () => {
-        setIsOpen(!isOpen);
-    };
 
     return (
-        <div key={id}>
-            <div onClick={toggleAccordion}>
-                <div className="card-body bg-secondary-subtle">
-                    <h3 className="card-title text-center mt-2 mb-2 fw-bold">{nome} {cognome}</h3>
 
-
-                    {isOpen && (
-                        <>
-                            <p>Email: {email}</p>
-                            <p>Telefono: {telefono}</p>
-                            <p>Codice Fiscale: {codiceFiscale}</p>
-                        </>
-                    )}
+        <div className="container mt-3">
+            <div className="accordion" id={`accordionExample-${id}`}>
+                <div className="accordion-item">
+                    <h2 className="accordion-header" id={`heading-${id}`}>
+                        <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target={`#collapse-${id}`}
+                            aria-expanded="false"
+                            aria-controls={`collapse-${id}`}
+                        >
+                            {nome} {cognome}
+                        </button>
+                    </h2>
+                    <div
+                        id={`collapse-${id}`}
+                        className="accordion-collapse collapse"
+                        data-bs-parent={`#accordionExample-${id}`}
+                    >
+                        <div className="accordion-body d-flex justify-content-between">
+                            <div>
+                                <p><strong>Email:</strong> {email}</p>
+                                <p><strong>Telefono:</strong> {telefono}</p>
+                                <p><strong>Codice Fiscale:</strong> {codiceFiscale}</p>
+                            </div>
+                            <div>
+                                <img
+                                    src="image-profile.png"
+                                    alt="foto-profilo"
+                                    className="foto-profilo"
+                                />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

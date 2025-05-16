@@ -5,9 +5,7 @@ import Utenti from "./pages/Utenti"
 import DefaultLayout from "./layout/DefaultLayout"
 import DettagliViaggio from "./pages/DettagliViaggio"
 
-
 function App() {
-
 
   return (
     <>

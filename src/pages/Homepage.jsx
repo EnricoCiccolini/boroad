@@ -1,4 +1,5 @@
 import viaggi from "../../data/viaggi";
+import CardViaggio from "../component/CardViaggio";
 
 
 function Homepage() {
@@ -15,7 +16,6 @@ function Homepage() {
             filteredViaggi.push(viaggio);
         }
     }
-    console.log(filteredViaggi)
 
 
 
@@ -29,14 +29,16 @@ function Homepage() {
                     </p>
                     <hr className="my-4" />
                     <h2 className="mt-5">Viaggi in corso</h2>
+                    <div className="container d-flex">
+                        {filteredViaggi.map((ele) => (
 
-                    {filteredViaggi.map((ele) => (
-                        <div className="col-md-4 mb-4" key={ele.id}>
-                            <CardViaggio viaggio={ele} />
-                        </div>
-                    ))}
+                            <div className="col-md-4 mb-4 m-4" key={ele.id}>
+                                <CardViaggio viaggio={ele} />
+                            </div>
 
+                        ))}
 
+                    </div>
 
                 </div>
             </div>

@@ -3,7 +3,7 @@ const viaggi = [
         id: 1,
         slug: "roma-2025",
         destinazione: "Roma",
-        dataInizio: "2025-06-10",
+        dataInizio: "2025-05-15",
         dataFine: "2025-06-15",
         image: "https://www.turismoroma.it/sites/default/files/Roma%20in%20breve.jpg"
     },
@@ -11,7 +11,7 @@ const viaggi = [
         id: 2,
         slug: "parigi-2025",
         destinazione: "Parigi",
-        dataInizio: "2025-07-01",
+        dataInizio: "2025-05-01",
         dataFine: "2025-07-07",
         image: "http://www.info-turismo.it/wp-content/uploads/2020/12/shutterstock_710380270-768x507.jpg"
     },
@@ -43,8 +43,8 @@ const viaggi = [
         id: 6,
         slug: "lisbona-2025",
         destinazione: "Lisbona",
-        dataInizio: "2025-06-18",
-        dataFine: "2025-06-25",
+        dataInizio: "2025-01-18",
+        dataFine: "2025-01-25",
         image: "http://www.culturaeculture.it/wp-content/uploads/2013/01/MF-Fotolia.com_.jpg"
     }
 ];

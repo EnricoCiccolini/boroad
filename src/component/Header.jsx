@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Header() {
 
-    return <header className="bg-secondary">
+    return <header className="bg-info">
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,6 +27,7 @@ export default function Header() {
                         <li className="nav-item mx-3">
                             <NavLink className="nav-link fw-bold fw-header" to="/utenti">Lista Utenti</NavLink>
                         </li>
+
                     </ul>
                 </div>
             </div>

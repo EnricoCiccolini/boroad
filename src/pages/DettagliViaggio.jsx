@@ -5,15 +5,15 @@ import CardUtente from "../component/CardUtente"
 function DettagliViaggio() {
     const { slug } = useParams()
     const filteredUtenti = utenti.filter(res => res.slugViaggio === slug)
-    console.log(filteredUtenti)
+
     return (
         <>
 
             <div>
                 {
-                    filteredUtenti ? filteredUtenti.map((ele) => (
-                        <CardUtente utente={ele} />
-                    )) : <h2>nessun viaggiatore per questo viaggio</h2>
+                    filteredUtenti.length > 0 ? filteredUtenti.map((ele) => (
+                        <CardUtente utente={ele} key={ele.id} />
+                    )) : <h2>Nessun viaggiatore per questo viaggio</h2>
                 }
             </div>
         </>
