@@ -1,4 +1,4 @@
-const partecipanti = [
+const utenti = [
     {
         id: 1,
         nome: "Marco",
@@ -136,4 +136,4 @@ const partecipanti = [
     }
 ];
 
-module.exports = partecipanti;
+export default utenti;
