@@ -1,12 +1,11 @@
 import CardViaggio from "../component/CardViaggio";
-
 import { useState } from "react";
 
 function Viaggi({ viaggio, setViaggio }) {
-
-    const [allert, setAllert] = useState(false)
-    const [message, setmessage] = useState('')
-    const [success, setsuccess] = useState(false)
+    const [allert, setAllert] = useState(false);
+    const [message, setmessage] = useState('');
+    const [success, setsuccess] = useState(false);
+    const [timeoutId, setTimeoutId] = useState(null);
 
     const [nuovoViaggio, setNuovoViaggio] = useState({
         destinazione: "",
@@ -14,7 +13,6 @@ function Viaggi({ viaggio, setViaggio }) {
         dataFine: "",
         image: ""
     });
-    console.log(nuovoViaggio)
 
     const handleChange = (e) => {
         setNuovoViaggio({
@@ -23,84 +21,99 @@ function Viaggi({ viaggio, setViaggio }) {
         });
     };
 
-
     const aggiungiViaggio = () => {
-        let n = 0
-        let time
-        clearTimeout(time)
-        setAllert(false)
+        let n = 0;
 
-        setsuccess(false)
 
-        let messageerror = `si sono verificati i seguenti problemi   `
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+            setTimeoutId(null);
+        }
+
+        setAllert(false);
+        setsuccess(false);
+
+        let messageerror = `si sono verificati i seguenti problemi   `;
         if (nuovoViaggio.destinazione === "") {
-            console.log('sono qui')
-            n++
+            n++;
             messageerror += `
                 , devi inserire una destinazione
-
-            `
+            `;
         }
         if (nuovoViaggio.dataInizio === "") {
-            n++
+            n++;
             messageerror += `
                 ,  devi inserire una data di inizio viaggio
-
-                `
+                `;
         }
         if (nuovoViaggio.dataFine === "") {
-            n++
+            n++;
             messageerror += `
                 ,   devi inserire una data di fine viaggio
-
-            `
+            `;
+        }
+        if (nuovoViaggio.dataFine < nuovoViaggio.dataInizio) {
+            n++;
+            messageerror += `
+                ,   non puoi indserire una data di fine prima di quella iniziale 
+            `;
         }
 
         if (n > 0) {
-            setmessage(messageerror)
-            setAllert(true)
+            setmessage(messageerror);
+            setAllert(true);
 
-            time = setTimeout(function () {
 
-                setAllert(false)
+            const newTimeoutId = setTimeout(() => {
+                setAllert(false);
             }, 5000);
 
-            return
+            setTimeoutId(newTimeoutId);
+            return;
         }
 
-
-
         const nuovoId = viaggio.length + 1;
-        const slug = `${nuovoViaggio.destinazione.toLowerCase().replace(/\s+/g, "-")}`
+        const slug = `${nuovoViaggio.destinazione.toLowerCase().replace(/\s+/g, "-")}`;
         const viaggioAggiunto = {
             id: nuovoId,
             slug,
             ...nuovoViaggio
         };
 
-
-        setsuccess(true)
+        setsuccess(true);
         setViaggio([...viaggio, viaggioAggiunto]);
-        setNuovoViaggio({ destinazione: "", dataInizio: "", dataFine: "", image: "" })
+        setNuovoViaggio({ destinazione: "", dataInizio: "", dataFine: "", image: "" });
 
 
-        time = setTimeout(function () {
-            setsuccess(false)
-            setAllert(false)
+        const newTimeoutId = setTimeout(() => {
+            setsuccess(false);
         }, 5000);
 
+        setTimeoutId(newTimeoutId);
+
     };
+    const close = () => {
+        clearTimeout(timeoutId);
+        setTimeoutId(null);
+        setAllert(false);
+        setsuccess(false);
 
 
+    }
+
+
+    const numViaggi = viaggio.length;
     return (
         <>
-            <h1 className="text-center mt-3 mb-3">Lista viaggi</h1>
-            {allert ? <div className="alert alert-danger" role="alert">
-                {message}
-            </div> : ''}
-            {success ? <div className="alert alert-success" role="alert">
-                Viaggio caricato con successo
-            </div> : ''}
+            <h1 className="text-center mt-3 mb-3">Lista viaggi  <span className="badge text-bg-secondary"> {numViaggi}</span></h1>
+            <div className="container position-relative">
+                {allert ? <div className="alert alert-danger text-center sticky-top" role="alert">
+                    {message} <button type="button" className="btn-close position-absolute top-0 start-100" aria-label="Close" onClick={close}></button>
+                </div> : ''}
+                {success ? <div className="alert alert-success text-center sticky-top" role="alert">
+                    Viaggio caricato con successo <button type="button" className="btn-close position-absolute top-0 start-100" aria-label="Close" onClick={close}></button>
+                </div> : ''}
+            </div>
             <div className=" container mt-5 mb-5">
                 <h2 className="mb-4 mt-4 text-center">Aggiungi un nuovo viaggio</h2>
                 <div className="row mb-4">
@@ -160,7 +173,7 @@ function Viaggi({ viaggio, setViaggio }) {
                 </div>
             </div>
         </>
-    )
-};
+    );
+}
 
 export default Viaggi;

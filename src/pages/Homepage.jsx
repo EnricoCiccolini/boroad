@@ -19,7 +19,7 @@ function Homepage({ viaggio }) {
     }
 
 
-
+    let numViaggi = filteredViaggi.length
     return (
         <>
             <div className="container mt-5">
@@ -52,7 +52,7 @@ function Homepage({ viaggio }) {
                         </button>
                     </div>
 
-                    <h2 className="mt-5 roboto-uniquifier">Viaggi in corso</h2>
+                    <h2 className="mt-5 roboto-uniquifier">Viaggi in corso <span class="badge text-bg-secondary"> {numViaggi}</span></h2>
                     <div className="container d-flex">
                         {filteredViaggi.map((ele) => (
 
