@@ -36,7 +36,7 @@ function User() {
                 </div>
             </div>
 
-            <div className="container">
+            <div className="container mt-3 mb-5">
                 {arraysenzadoppi.map((ele, id) => (
                     <CardUtente utente={ele} key={id} />
                 ))}

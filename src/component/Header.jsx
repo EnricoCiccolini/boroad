@@ -17,15 +17,15 @@ export default function Header() {
                         </li>
 
                         <li className="nav-item mx-3">
-                            <NavLink className="nav-link fw-bold fw-header" to="/">Homepage</NavLink>
+                            <NavLink className="nav-link fw-bold fw-header bebas-neue-regular" to="/">Homepage</NavLink>
                         </li>
 
                         <li className="nav-item mx-3">
-                            <NavLink className="nav-link fw-bold fw-header" to="/viaggi">Lista Viaggi</NavLink>
+                            <NavLink className="nav-link fw-bold fw-header bebas-neue-regular" to="/viaggi">Lista Viaggi</NavLink>
                         </li>
 
                         <li className="nav-item mx-3">
-                            <NavLink className="nav-link fw-bold fw-header" to="/utenti">Lista Utenti</NavLink>
+                            <NavLink className="nav-link fw-bold fw-header bebas-neue-regular" to="/utenti">Lista Utenti</NavLink>
                         </li>
 
                     </ul>

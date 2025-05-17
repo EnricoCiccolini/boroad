@@ -1,4 +1,4 @@
-
+import React, { useState } from "react";
 
 export default function CardUtente({ utente }) {
     const { id, nome, cognome, email, telefono, codiceFiscale } = utente;
