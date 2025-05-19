@@ -110,18 +110,18 @@ export default function Viaggi({ viaggio, setViaggio }) {
 
         <h1 className="text-center mt-3 mb-3">Lista viaggi  <span className="badge text-bg-secondary"> {numViaggi}</span></h1>
         <div className="container min-height  position-relative">
-            {allert ? <div className="message-pop alert alert-danger text-center sticky-top" role="alert">
+            {allert ? <div className="message-pop alert alert-danger text-center" role="alert">
                 {message} <button type="button" className="btn-close position-absolute top-0 start-100 translate-middle" aria-label="Close" onClick={close}></button>
             </div> : ''}
-            {success ? <div className="message-pop alert alert-success text-center sticky-top" role="alert">
+            {success ? <div className="message-pop alert alert-success text-center" role="alert">
                 Viaggio caricato con successo <button type="button" className="btn-close position-absolute top-0 start-100 translate-middle" aria-label="Close" onClick={close}></button>
             </div> : ''}
         </div>
         <div className=" container mt-5 mb-5">
             <h2 className="mb-4 mt-4 text-center">Aggiungi un nuovo viaggio</h2>
-            <div className="row mb-4 align-items-center">
+            <div className="row mb-4 align-items-end">
                 <div className="col-md-3">
-                    <label for="destinazione">
+                    <label htmlFor="destinazione">
                         <h5>destinazione:</h5>
                     </label>
                     <input
@@ -135,7 +135,7 @@ export default function Viaggi({ viaggio, setViaggio }) {
                         required />
                 </div>
                 <div className="col-md-2">
-                    <label for="data-inizio">
+                    <label htmlFor="data-inizio">
                         <h5>data inizio:</h5>
                     </label>
                     <input
@@ -148,7 +148,7 @@ export default function Viaggi({ viaggio, setViaggio }) {
                         required />
                 </div>
                 <div className="col-md-2">
-                    <label for="data-fine">
+                    <label htmlFor="data-fine">
                         <h5>data fine:</h5>
                     </label>
                     <input
@@ -163,7 +163,7 @@ export default function Viaggi({ viaggio, setViaggio }) {
                 </div>
 
                 <div className="col-md-3">
-                    <label for="immagine">
+                    <label htmlFor="immagine">
                         <h5>immagine destinazione:</h5>
                     </label>
                     <input

@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
 
 
+
 export default function Header() {
 
     return <header>
-        <nav className="navbar navbar-expand-lg">
+        <nav className="navbar navbar-expand-lg ">
             <div className="container-fluid">
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -30,6 +31,7 @@ export default function Header() {
 
                     </ul>
                 </div>
+
             </div>
         </nav>
     </header>

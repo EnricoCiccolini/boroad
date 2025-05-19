@@ -1,12 +1,50 @@
-# React + Vite
+# 🌍 Booroad-Travel Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+✨ Progetto sviluppato dal **Team 1** della **Classe 142** di Boolean ✨
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧭 Descrizione
 
-## Expanding the ESLint configuration
+**Booroad-Travel Website** è una web app progettata per facilitare la gestione dei viaggi organizzati da **Booroad**, pensata per l’utilizzo da parte di accompagnatori e amministratori.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Con questa applicazione puoi:
+
+✅ Visualizzare la **lista dei viaggi**  
+✅ Visualizzare la **lista degli utenti** (partecipanti)  
+➕ **Aggiungere nuovi viaggi**  
+➕ **Aggiungere nuovi utenti**  
+
+---
+
+## 🛠️ Tecnologie utilizzate
+
+- ⚛️ **React** + ⚡ **Vite** — per uno sviluppo moderno e super veloce  
+- 🧩 Componenti modulari  
+- 🎨 Stile semplice, responsive e intuitivo  
+
+---
+
+
+## 🚀 Installazione
+
+Clona il repository ed esegui il progetto in locale:
+
+```bash
+git clone https://github.com/EnricoCiccolini/boroad
+cd booroad-travel-website
+npm install
+```
+
+---
+
+## 👨‍💻 Autori:
+- 👤 Enrico Ciccolini
+
+- 👤 Marco Vacchi
+
+- 👤 Mattia Defendi
+
+- 👤 Gianluca Severo
+
+- 👤 Denise Di Genni

@@ -43,10 +43,9 @@ export default function DettagliViaggio() {
             );
         }
     };
-    console.log(users)
 
     return <div>
-        <div className="text-center mb-3 mt-3">campo per aggiungere partecipanti</div>
+
         <div>
             {
                 filteredUtenti.length > 0 ? filteredUtenti.map((ele) => (
@@ -54,7 +53,7 @@ export default function DettagliViaggio() {
                 )) : <h2>Nessun viaggiatore per questo viaggio</h2>
             }
         </div>
-
+        <div className="text-center mb-3 mt-3">campo per aggiungere partecipanti</div>
         <div className='container w-25'>
             <div className="input-group mt-2 mb-5 d-flex ">
                 <span className="input-group-text">Cerca</span>
