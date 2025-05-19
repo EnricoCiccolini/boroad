@@ -4,20 +4,18 @@ import CardUtente from "../component/CardUtente"
 import { useState } from "react";
 
 export default function DettagliViaggio() {
-
     const { slug } = useParams();
-
     const [research, setResearch] = useState('');
-    const [addUser, setAddUser] = useState(utenti);
+    const [users, setUsers] = useState(utenti);
 
     const filteredName = [
-        ...utenti.filter(element =>
+        ...users.filter(element =>
             element.cognome.toLowerCase().includes(research.toLowerCase())
         ),
-        ...utenti.filter(element =>
+        ...users.filter(element =>
             element.nome.toLowerCase().includes(research.toLowerCase())
         ),
-        ...utenti.filter(element =>
+        ...users.filter(element =>
             element.codiceFiscale.toLowerCase().includes(research.toLowerCase())
         ),
     ];
@@ -26,15 +24,28 @@ export default function DettagliViaggio() {
         filteredName.findIndex(altroOggetto => altroOggetto.id === oggetto.id) === index
     );
 
-    const filteredUtenti = utenti.filter(res => res.slugViaggio.includes(slug));
+    const filteredUtenti = users.filter(res => res.slugViaggio.includes(slug));
 
     const handleAddUser = (ele) => {
-        ele.slugViaggio.push(slug)
-        setAddUser(prev => [...prev, utenti])
+
+        if (!ele.slugViaggio.includes(slug)) {
+
+            const updatedUser = {
+                ...ele,
+                slugViaggio: [...ele.slugViaggio, slug]
+            };
+
+
+            setUsers(prevUsers =>
+                prevUsers.map(user =>
+                    user.id === ele.id ? updatedUser : user
+                )
+            );
+        }
     };
+    console.log(users)
 
     return <div>
-
         <div className="text-center mb-3 mt-3">campo per aggiungere partecipanti</div>
         <div>
             {
@@ -59,11 +70,11 @@ export default function DettagliViaggio() {
             {arraysenzadoppi.map((ele, id) => (
                 <div key={id} >
                     <CardUtente utente={ele} />
-                    <button class="btn btn-custom ms-3 mt-1" onClick={() => handleAddUser(ele)} >aggiungi</button>
+                    <button className="btn btn-custom ms-3 mt-1" onClick={() => handleAddUser(ele)}>
+                        aggiungi
+                    </button>
                 </div>
             ))}
         </div>
-
     </div>
-};
-
+}
