@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 export default function CardUtente({ utente }) {
 
     const { id, nome, cognome, email, telefono, codiceFiscale } = utente;
@@ -34,7 +35,7 @@ export default function CardUtente({ utente }) {
                             </div>
                             <div>
                                 <img
-                                    src="image-profile.png"
+                                    src="../../public/image-profile.png"
                                     alt="foto-profilo"
                                     className="foto-profilo"
                                 />

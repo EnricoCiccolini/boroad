@@ -32,7 +32,7 @@ Clona il repository ed esegui il progetto in locale:
 
 ```bash
 git clone https://github.com/EnricoCiccolini/boroad
-cd booroad-travel-website
+cd boroad
 npm install
 ```
 

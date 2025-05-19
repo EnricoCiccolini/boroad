@@ -142,7 +142,7 @@ export default function User({ utenti, setUtenti }) {
 
     return <div>
 
-        <h1 className="mt-3 mb-3 text-center position-relative">Lista utenti <span className=" top-0 start-100 translate-middle badge rounded-pill bg-danger"> {arraysenzadoppi.length}</span></h1>
+        <h1 className="mt-3 mb-3 text-center ">Lista utenti  <span className=" badge rounded-pill btn-custom "> {arraysenzadoppi.length}</span></h1>
         <div className='container w-25'>
             <div className="input-group mt-2 mb-5 d-flex ">
                 <span className="input-group-text">Cerca</span>

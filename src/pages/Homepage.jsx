@@ -52,7 +52,7 @@ export default function Homepage({ viaggio }) {
                     </button>
                 </div>
 
-                <h2 className="mt-5 roboto-uniquifier">Viaggi in corso <span className="badge text-bg-secondary"> {numViaggi}</span></h2>
+                <h2 className="mt-5 roboto-uniquifier">Viaggi in corso <span className=" badge rounded-pill btn-custom "> {numViaggi}</span></h2>
                 <div className="container d-flex">
                     {filteredViaggi.map((ele) => (
 

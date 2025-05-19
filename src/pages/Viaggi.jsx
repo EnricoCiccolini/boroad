@@ -108,7 +108,7 @@ export default function Viaggi({ viaggio, setViaggio }) {
 
     return <div>
 
-        <h1 className="text-center mt-3 mb-3">Lista viaggi  <span className="badge text-bg-secondary"> {numViaggi}</span></h1>
+        <h1 className="text-center mt-3 mb-3">Lista viaggi  <span className=" badge rounded-pill btn-custom "> {numViaggi}</span></h1>
         <div className="container min-height  position-relative">
             {allert ? <div className="message-pop alert alert-danger text-center" role="alert">
                 {message} <button type="button" className="btn-close position-absolute top-0 start-100 translate-middle" aria-label="Close" onClick={close}></button>
