@@ -8,7 +8,7 @@ export default function DettagliViaggio() {
     const { slug } = useParams();
 
     const [research, setResearch] = useState('');
-    const [addUser, setAddUser] = useState([]);
+    const [addUser, setAddUser] = useState(utenti);
 
     const filteredName = [
         ...utenti.filter(element =>
@@ -16,6 +16,9 @@ export default function DettagliViaggio() {
         ),
         ...utenti.filter(element =>
             element.nome.toLowerCase().includes(research.toLowerCase())
+        ),
+        ...utenti.filter(element =>
+            element.codiceFiscale.toLowerCase().includes(research.toLowerCase())
         ),
     ];
 
@@ -26,8 +29,8 @@ export default function DettagliViaggio() {
     const filteredUtenti = utenti.filter(res => res.slugViaggio.includes(slug));
 
     const handleAddUser = (ele) => {
-        setAddUser([...addUser, ele])
-
+        ele.slugViaggio.push(slug)
+        setAddUser(prev => [...prev, utenti])
     };
 
     return <div>
@@ -54,11 +57,11 @@ export default function DettagliViaggio() {
 
         <div className="container mt-3 mb-5">
             {arraysenzadoppi.map((ele, id) => (
-                <>
-                    <CardUtente utente={ele} key={id} />
-                    <button onClick={() => handleAddUser(ele)} >aggiungi</button>
-                </>
-            ))};
+                <div key={id} >
+                    <CardUtente utente={ele} />
+                    <button class="btn btn-custom ms-3 mt-1" onClick={() => handleAddUser(ele)} >aggiungi</button>
+                </div>
+            ))}
         </div>
 
     </div>

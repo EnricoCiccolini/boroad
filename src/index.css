@@ -47,11 +47,8 @@ header {
 
 }
 
-div.message-pop {
-
-  position: absolute;
-  z-index: 1;
-
+.min-height {
+  height: 4rem;
 }
 
 .nav-link {

@@ -21,7 +21,7 @@ export default function User() {
 
     return <div>
 
-        <h1 className="mt-3 mb-3 text-center">Lista utenti <span className="badge text-bg-secondary"> {filteredName.length}</span></h1>
+        <h1 className="mt-3 mb-3 text-center">Lista utenti <span className="badge text-bg-secondary"> {arraysenzadoppi.length}</span></h1>
         <div className='container w-25'>
             <div className="input-group mt-2 mb-5 d-flex ">
                 <span className="input-group-text">Cerca</span>

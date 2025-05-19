@@ -119,9 +119,13 @@ export default function Viaggi({ viaggio, setViaggio }) {
         </div>
         <div className=" container mt-5 mb-5">
             <h2 className="mb-4 mt-4 text-center">Aggiungi un nuovo viaggio</h2>
-            <div className="row mb-4">
+            <div className="row mb-4 align-items-center">
                 <div className="col-md-3">
+                    <label for="destinazione">
+                        <h5>destinazione:</h5>
+                    </label>
                     <input
+                        id="destinazione"
                         type="text"
                         name="destinazione"
                         className="p-2 rounded"
@@ -131,7 +135,11 @@ export default function Viaggi({ viaggio, setViaggio }) {
                         required />
                 </div>
                 <div className="col-md-2">
+                    <label for="data-inizio">
+                        <h5>data inizio:</h5>
+                    </label>
                     <input
+                        id="data-inizio"
                         type="date"
                         name="dataInizio"
                         className="p-2 rounded"
@@ -140,7 +148,11 @@ export default function Viaggi({ viaggio, setViaggio }) {
                         required />
                 </div>
                 <div className="col-md-2">
+                    <label for="data-fine">
+                        <h5>data fine:</h5>
+                    </label>
                     <input
+                        id="data-fine"
                         type="date"
                         name="dataFine"
                         className="p-2 rounded"
@@ -151,7 +163,11 @@ export default function Viaggi({ viaggio, setViaggio }) {
                 </div>
 
                 <div className="col-md-3">
+                    <label for="immagine">
+                        <h5>immagine destinazione:</h5>
+                    </label>
                     <input
+                        id="immagine"
                         type="text"
                         name="image"
                         className="p-2 rounded"
