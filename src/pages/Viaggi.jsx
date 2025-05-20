@@ -33,6 +33,7 @@ export default function Viaggi({ viaggio, setViaggio }) {
         setsuccess(false);
 
         let messageerror = `si sono verificati i seguenti problemi   `;
+
         if (nuovoViaggio.destinazione === "") {
             n++;
             messageerror += `

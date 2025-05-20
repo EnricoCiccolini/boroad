@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-export default function CardUtente({ utente }) {
+export default function CardUtente({ utente, handleRemoveUser, handleAddUser, slug }) {
 
     const { id, nome, cognome, email, telefono, codiceFiscale } = utente;
 
@@ -32,6 +32,15 @@ export default function CardUtente({ utente }) {
                                 <p><strong>Email:</strong> {email}</p>
                                 <p><strong>Telefono:</strong> {telefono}</p>
                                 <p><strong>Codice Fiscale:</strong> {codiceFiscale}</p>
+                                {handleAddUser ? utente.slugViaggio.includes(slug) ? (
+                                    <button className="btn btn-danger ms-3" onClick={() => handleRemoveUser(utente)}>
+                                        Rimuovi
+                                    </button>
+                                ) : (
+                                    <button className="btn btn-custom ms-3" onClick={() => handleAddUser(utente)}>
+                                        Aggiungi
+                                    </button>
+                                ) : ""}
                             </div>
                             <div>
                                 <img
